@@ -2,15 +2,36 @@
 <html lang="en-US">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Coding Template</title>
+  <title>Calculator using REST service</title>
   <link rel="stylesheet" type="text/css" href="bundle.css">
 </head>
 
 <body>
-  <h1>Webpack - TypeScript - Scss</h1>
-  <h2>TypeScript Hello World</h2>  
-  <div id="content"></div>
+  <h1>Calculator using REST service</h1>
+  
+  <h2>Simple calculator</h2>
+  <div style="border: 1pt; border-style: solid; padding: 20pt">
+    <input id="number1" type="number" placeholder="type a number" /> +
+    <input id="number2" type="number" placeholder="type a number" />
+    <button id="calculateButtonSimple">=</button>
+    <span id="result"></span>
+  </div>
+
+  <h2>Slightly more advanced calculator</h2>
+  <div style="border: 1pt; border-style: solid; padding: 20pt">
+    <input id="number1A" placeholder="number" type="number" />
+    <select id="operation">
+      <option value="add">+</option>
+      <option value="sub">-</option>
+      <option value="mul">*</option>
+      <option value="div">/</option>
+    </select>
+    <input id="number2A" placeholder="number" type="number" />
+    <button id="calculateButtonAdvanced">=</button>
+    <span id="resultAdvanced"></span>
+  </div>
+
+  <span id="result"></span>
     
   <script src="bundle.js"></script>
 </body>
-</html>
