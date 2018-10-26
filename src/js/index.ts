@@ -1,6 +1,7 @@
 import axios, {
     AxiosResponse,
-    AxiosError} from "../../node_modules/axios";
+    AxiosError
+} from "../../node_modules/axios/index";
 
 let calculateButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("calculateButtonSimple");
 calculateButton.addEventListener("click", calculate);
@@ -14,7 +15,7 @@ function calculate(): void {
         { A: aElement.value, B: bElement.value })
         .then((response: AxiosResponse<number>) => {
             console.log(response.data);
-            resultElement.innerHTML = response.data;
+            resultElement.innerHTML = response.data.toString();
         })
         .catch((error: AxiosError) => { console.log(error); });
 }
@@ -23,7 +24,7 @@ function calculate(): void {
 let buttonElementA: HTMLButtonElement = <HTMLButtonElement>document.getElementById("calculateButtonAdvanced");
 buttonElementA.addEventListener("click", calculateAdvanced);
 
- let resultElementAdvanced: HTMLDivElement = <HTMLDivElement>document.getElementById("resultAdvanced");
+let resultElementAdvanced: HTMLDivElement = <HTMLDivElement>document.getElementById("resultAdvanced");
 
 function calculateAdvanced(): void {
     let number1inputElement: HTMLInputElement = <HTMLInputElement>document.getElementById("number1A");
@@ -48,7 +49,7 @@ function doIt(operationStr: string, a: number, b: number): void {
         { A: a, B: b })
         .then((response: AxiosResponse<number>) => {
             console.log(response.data);
-            resultElementAdvanced.innerHTML = response.data;
+            resultElementAdvanced.innerHTML = response.data.toString();
         })
         .catch((error: AxiosError) => { console.log(error); });
 }
